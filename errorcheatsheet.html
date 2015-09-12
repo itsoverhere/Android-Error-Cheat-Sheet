@@ -1,0 +1,183 @@
+<html>
+	<head>
+		<!--<link href="simple.css" rel="stylesheet"/>-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link href="simple.css" rel="stylesheet">
+		<script src="jquery.js"></script>
+		<script src="simple.js"></script>
+	</head>
+	<body>	
+		<div class="row title">
+			<h1>Common Android Errors</h1>
+		</div>
+
+		<div class="row">
+			<h2>XML Errors</h2>
+			<hr>
+			<pre>If you see this error:
+			<img src="http://i.imgur.com/KwtW9NN.png"/></pre>
+			<table class="table table-hover">
+				<thead>
+					<th>Error</th>
+					<th>How it looks</th>
+					<th>How to fix it</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							No resource ID
+						</td>
+						<td>
+							<img src="http://i.imgur.com/PpZP3wn.png"/>
+						</td>
+						<td>
+							A resource ID must have at least one character.
+
+							Rebuild your project.
+							<img src="http://i.imgur.com/kjtnOft.png"/>
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							Invalid resource ID
+						</td>
+						<td>
+							<img src="http://i.imgur.com/j8w1tE5.png"/>
+						</td>
+						<td>
+							An ID must start with a letter (a-z, or A-Z). Subsequent characters may contain underscores (_) and numbers (0-9).
+
+							Rebuild your project.
+							<img src="http://i.imgur.com/kjtnOft.png"/>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							Circular references in <kbd>XML</kbd>
+						</td>
+						<td>
+							<img src="http://i.imgur.com/TkJLc22.png"/>
+
+							(I temporarily used a <kbd>breakpoint</kbd> to highlight the incorrect lines. This is not its proper use.)
+						</td>
+						<td>
+							<kbd>TextView</kbd> is said to be below the <kbd>Button</kbd>. And, <kbd>Button</kbd> is said to be below the <kbd>TextView</kbd>.
+
+							Since these views depend on each other for their positions, Android is confused and will return an <kbd>onMeasure</kbd> error.
+
+							There are many ways to resolve a circular reference. In this case, we'll just delete one of the layout properties:
+							<img src="http://i.imgur.com/svLsYVL.png"/>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<pre>
+				This is a proper layout resource file:
+				<img src="http://i.imgur.com/bZJptrz.png"/>
+			</pre>
+		</div>
+
+
+		<div class="row">
+			<h2>NullPointerException</h2>
+			<hr>
+			<pre>These are runtime errors. LogCat will log them as <kbd>NullPointerExceptions</kbd>.</pre>
+			<table class="table table-hover">
+				<thead>
+					<th>Error</th>
+					<th>How it looks</th>
+					<th>How to fix it</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<kbd>View</kbd> has not been initialized.
+						</td>
+						<td>
+							<img src="http://i.imgur.com/QTMtl8Q.png"/>
+						</td>
+						<td>
+							Initialize the <kbd>view</kbd>:
+							<img src="http://i.imgur.com/0KvamNW.png"/>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<kbd>View</kbd> was not casted.
+						</td>
+						<td>
+							<img src="http://i.imgur.com/C6Nr6Rv.png"/>
+						</td>
+						<td>
+							Cast <kbd>View</kbd>.
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							<kbd>View</kbd> was incorrectly caster.
+						</td>
+						<td>
+							<img src="http://i.imgur.com/ah0gqSs.png"/>
+						</td>
+						<td>
+							<kbd>TextView</kbd> was casted as a <kbd>Button</kbd>. Switch the cast to <kbd>TextView</kbd>.
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<kbd>View</kbd> was linked to the wrong resource.
+						</td>
+						<td>
+							<img src="http://i.imgur.com/lvLjNBI.png"/>
+						</td>
+						<td>
+							<kbd>R.id.tv_greeting</kbd> is a <kbd>TextView</kbd> and cannot be assigned to a <kbd>Button</kbd>.
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<pre>
+				This is a proper example:
+				<img src="http://i.imgur.com/lqbzBQG.png"/>
+			</pre>
+		</div>
+
+<!--
+		<div>
+			<h3><> Errors</h3>
+			Runtime : NullPointerException
+			<table>
+				<thead>
+					<th>Error</th>
+					<th>How it looks</th>
+					<th>How to fix it</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							
+						</td>
+						<td>
+							<img src=""/>
+						</td>
+						<td>
+							
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			This is a proper layout resource file:
+			<>
+		</div>
+-->
+
+	</body>
+</html>
