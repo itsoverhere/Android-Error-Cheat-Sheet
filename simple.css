@@ -21,6 +21,8 @@ kbd{
 	/*margin-top:15px;*/
 	line-height: 25px;
 	color:#03a9f4;
+	border-radius:0px;
+	box-shadow: none;
 }
 
 td{
