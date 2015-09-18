@@ -17,9 +17,10 @@ pre img{
 }
 
 kbd{
-	background-color: #004400;
+	background-color:#f7f7f7;
 	/*margin-top:15px;*/
 	line-height: 25px;
+	color:#03a9f4;
 }
 
 td{
